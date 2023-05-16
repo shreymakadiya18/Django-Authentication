@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>SignUp</h3>
+    <form action="/signup" method="post">
+        {% csrf_token %}
+        <label for="">Username*</label>
+        <br>
+        <input type="text" id="username" name="username" placeholder="Create a username (only letters and numbers )" required/>
+        <br><br>
+        <label for="">First Name*</label><br>
+        <input type="text" id="fname" name="fname" placeholder="firstname" required/>
+        <br><br>
+        <label for="">Last Name</label><br>
+        <input type="text" id="lname" name="lname" placeholder="lastname" />
+        <br><br>
+        <label for="">Email</label><br>
+        <input type="email" id="email" name="email" placeholder="email" />
+        <br><br>
+        <label for="">Password*</label><br>
+        <input type="password" id="pass1" name="pass1" placeholder="password" required/>
+        <br><br>
+        <label for="">Confirm Password*</label><br>
+        <input type="password" id="pass2" name="pass2" placeholder="confirmpassword" required/>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+    <br><br><br>
+    <button type="submit"><a href="/signup"> signUp</a></button>
+    <button type="submit"><a href="/signin"> signIn</a></button>
+    <button type="submit" onclick=func1><a href="/signout"> signOut</a></button>
+</body>
+<script>
+    function func1(){
+        window.alert('you are successfully logout {{fname}}')
+    }
+</script>
+</html>
